@@ -48,7 +48,8 @@ void Seating::AssignSeats(){
             for (int j = 0; j < party.second; j++){
                 string seat = availableSeats[leftOverRow][leftOverSeats[leftOverRow][j]];
                 reservedSeats[party.first].push_back(seat);
-                availableSeats[leftOverRow][leftOverSeats[leftOverRow][j]] = "";   
+                availableSeats[leftOverRow][leftOverSeats[leftOverRow][j]] = "";
+                leftOverSeats[leftOverRow].erase(leftOverSeats[leftOverRow].begin() + j);   
             }
         }
         else {
